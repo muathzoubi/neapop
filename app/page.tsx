@@ -1,17 +1,92 @@
-import Home2 from './viewes/Home';
-export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-8">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-      </div>
+'use client';
+import React, { useState } from 'react';
+import Forms from './Forms';
+import PayForms from './PayForm';
+import CarForms from './CarForms';
+import './Home.css';
+import Loader from './loader';
+import BillForms from './BillMain';
+export default function Home2(props: any) {
+  const [loading, setLoading] = useState(true);
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Home2 />
+  const handleElement = (id: number) => {
+    switch (id) {
+      case 1:
+        setElement(
+          <Forms
+            handleElement={handleElement}
+          />
+        );
+
+        break;
+      case 2:
+        setElement(
+          <CarForms handleElement={handleElement}  />
+        );
+
+        break;
+      case 3:
+        setElement(
+          <BillForms handleElement={handleElement}  />
+        );
+
+        break;
+      case 4:
+        setElement(
+          <PayForms handleElement={handleElement}  />
+        );
+        break;
+      default:
+        setElement(
+          <Forms
+            handleElement={handleElement}
+            
+          />
+        );
+        break;
+    }
+  };
+
+  const [globalid, setGloabalid] = useState<string | number>();
+  const handleGid = (v: any) => {
+    setGloabalid(v);
+  };
+  const [element, setElement] = useState(
+    <Forms
+      handleElement={handleElement}
+   
+      
+    />
+  );
+
+  React.useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 4000);
+  });
+  return (
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        justifyItems: 'center',
+        padding: 10,
+      }}
+    >
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+        }}
+      >
+        {loading ? <Loader /> : element}
       </div>
-    </main>
+      <footer>
+        <span className="agreement">
+          <a href="#">Learn user licence agreement</a>
+        </span>
+      </footer>
+    </div>
   );
 }
