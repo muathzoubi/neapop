@@ -1,3 +1,4 @@
+'use clinet'
 import React from 'react';
 
 const Forms = (props: { handleElement: (arg0: number) => void }) => {

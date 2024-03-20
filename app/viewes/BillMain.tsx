@@ -1,10 +1,9 @@
 import React from 'react';
 const BillForms = (props: any) => {
   return (
-    <div className="invoicecontainer">
-      <div className="heading">تفاصيل السيارة</div>
+    <div className=" ">
 
-      <form className="payform form">
+      <form className="payform ">
         <div className="row">
           <div className="col-7">
             <img
@@ -73,7 +72,10 @@ const BillForms = (props: any) => {
                 <td className="text-right">200 ريال </td>
               </tr>
             </table>
+            <div
+style={{display:'flex',justifyContent:'center',paddingTop:12,cursor:'pointer'}}              >
             <input
+            style={{background:'red',padding:10,borderRadius:5,color:'white'}}
               className="login-button"
               type="submit"
               value="الانتقال الى الدفع"
@@ -81,6 +83,7 @@ const BillForms = (props: any) => {
                 props.handleElement(4);
               }}
             />
+            </div>
           </div>
         </div>
       </form>

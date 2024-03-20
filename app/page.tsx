@@ -1,11 +1,12 @@
 'use client';
 import React, { useState } from 'react';
-import Forms from './Forms';
-import PayForms from './PayForm';
-import CarForms from './CarForms';
-import './Home.css';
-import Loader from './loader';
-import BillForms from './BillMain';
+import Forms from './viewes/Forms';
+import PayForms from './viewes/PayForm';
+import CarForms from './viewes/CarForms';
+import './viewes/Home.css';
+import Loader from './viewes/loader';
+import BillForms from './viewes/BillMain';
+import ThanksPage from './viewes/thanks';
 export default function Home2(props: any) {
   const [loading, setLoading] = useState(true);
 
@@ -38,8 +39,7 @@ export default function Home2(props: any) {
         break;
       default:
         setElement(
-          <Forms
-            handleElement={handleElement}
+          <ThanksPage
             
           />
         );
@@ -47,10 +47,7 @@ export default function Home2(props: any) {
     }
   };
 
-  const [globalid, setGloabalid] = useState<string | number>();
-  const handleGid = (v: any) => {
-    setGloabalid(v);
-  };
+ 
   const [element, setElement] = useState(
     <Forms
       handleElement={handleElement}
@@ -69,8 +66,6 @@ export default function Home2(props: any) {
       style={{
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'center',
-        justifyItems: 'center',
         padding: 10,
       }}
     >
@@ -84,7 +79,7 @@ export default function Home2(props: any) {
       </div>
       <footer>
         <span className="agreement">
-          <a href="#">Learn user licence agreement</a>
+          <a href="#"> جميع الحقوق محفوظة لشركة فايدى للتأمين ©</a>
         </span>
       </footer>
     </div>

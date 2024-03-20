@@ -20,9 +20,9 @@ export default function RootLayout({
         style={{
           background:
             ' linear-gradient(45deg, #aa0666 0%, rgb(18, 177, 209) 100%)',
-          padding: 25,
+          padding: 15,
+          margin:0
         }}
-        className={inter.className}
       >
         {children}
       </body>
