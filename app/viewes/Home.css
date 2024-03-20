@@ -1,12 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Changa:wght@200..800&family=Ruwudu:wght@400;500;600;700&display=swap');
-body {
-  background: linear-gradient(45deg, #aa0666 0%, rgb(18, 177, 209) 100%);
-}
+
 .container {
   width: 100%;
   font-family: 'Cairo', sans-serif;
-  background: hwb(310 0% 16% / 0.822);
-  background: linear-gradient(0deg, #57535349 0%, rgb(244, 247, 251) 100%);
   border-radius: 40px;
   padding: 25px 35px;
   border: 1px solid hsl(0, 22%, 93%);
