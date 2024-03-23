@@ -16,10 +16,20 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ar" dir="rtl">
+      <head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KJZ6QRBG60">
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(darguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-KJZ6QRBG60');
+</script>
+      </head>
       <body
         style={{
-          background:
-            ' linear-gradient(45deg, #aa0666 0%, rgb(18, 177, 209) 100%)',
+         
           padding: 15,
           margin:0
         }}
